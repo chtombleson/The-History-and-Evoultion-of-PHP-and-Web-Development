@@ -1,5 +1,5 @@
 # The History and Evoultion of PHP and Web Development
-## By Christopher Tombleson <chris@cribznetwork.com>
+**By Christopher Tombleson <chris@cribznetwork.com>**
 
 This is a paper, research whatever.. of the evoultion of the web and web development from
 it's early days as static HTML to now with dymanic web 2.0 features etc.
