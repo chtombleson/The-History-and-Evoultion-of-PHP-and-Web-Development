@@ -1,21 +1,59 @@
 \documentclass{book}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Perl,                   % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
 \setlength{\parindent}{0cm}
+
 \begin{document}
 \title{The History and Evoultion of PHP and Web Development}
 \author{By Christopher Tombleson \href{mailto:chris@cribznetwork.com}{chris@cribznetwork.com}}
 \date{\today}
 \maketitle
 
+\tableofcontents
+
 \chapter{Intro}
-\subsubsection{Preamble}
+\section{Preamble}
 I will be exploring the evoultion of web development and PHP from it's humble beginnings as some C based cgi script though till today.
 
 I will also explore some other languages that have been prevalent in the evoultion, expansion and dominance of the web in our everyday life.
 
 I'm searching the web and asking people gathering information about the evoultion of web development but more so the evoultion of PHP.
 
-\subsubsection{About the Author}
+\section{About the Author}
 
 I've developing and writing web applications since 2008 mostly in PHP but I've work with Perl, Ruby and sadly that evil thing we call .NET
 
@@ -28,7 +66,7 @@ Nowadays I'm an advide opensource developer and contributor, mostly to PHP proje
 But for the purposes of this document I will be focusing mainly on PHP but will hit on some Perl (because it's awesome), Ruby, maybe some Python and some Javascript, node.js.
 
 \chapter{The Web - Early Days}
-From the days of the Gopher protocol and text based browsing to graphical interface and HTML/HyperText. The early 80's and though to the mid 90's the progression from terminal based text browsers to Netscape Navigator \& Internet Explorer (evil).
+From the days of the Gopher protocol and text based browsing to graphical interface and HTML/HyperText. The early 1980's and though to the mid 1990's the progression from terminal based text browsers to Netscape Navigator \& Internet Explorer (evil).
 
 The World Wide Web (good old www) invented \& developed by Sir Tim Berners-Lee in 1989 at CERN and also created the worlds first website,
 \href{http://info.cern.ch/hypertext/WWW/TheProject.html}{info.cern.ch}\cite{wiki-History-of-the-internet, cern}.
@@ -39,12 +77,48 @@ For more info about the world first website: \href{http://info.cern.ch/}{http://
 
 If your like me your probably wondering how did we go from the worlds first website to the websites of today\ldots{}
 
-\subsubsection{The Birth of CGI (Common Gateway Interface)}
+\section{The Birth of CGI (Common Gateway Interface)}
 The birth of CGI finally gave us away of run a program/script on a web server and then render the output of these scripts and send it back to the client.
 
 The language of choice back when CGI was released in 1993\cite{royal-pingdom} was Perl.
 
-\subsubsection{The rise of server side languages in the web}
+\section{Perl on the web}
+Perl is a widely used general purpose scripting language. Initial developed by Larry Wall in 1987 for scripting on Unix systems.
+
+Perl 5 become popular in the late 1990's as a CGI scripting language. Perl 5 was released in late 1997, one thing that made Perl even popular for web development was the creation of CGI.pm.
+
+CGI.pm is a Perl module that provides an api for creating CGI (Common Gateway Interface) web applications.
+
+\subsection{Example Perl CGI Script}
+\begin{lstlisting}
+use CGI ':standard';
+ 
+print header,
+    start_html('A Simple CGI Page'),
+    h1('A Simple CGI Page'),
+    start_form,
+    'Name: ',
+    textfield('name'), br,
+    'Age: ',
+    textfield('age'), p,
+    submit('Submit!'),
+    end_form, p,
+    hr;
+ 
+print 'Your name is ', param('name'), br if param 'name';
+print 'You are ', param('age'), ' years old.' if param 'age';
+ 
+print end_html;
+
+\end{lstlisting}
+
+\section{Early PHP}
+PHP was created in 1994 by Rasmus Lerdorf and was original a set of C CGI (Common Gateway Interface) binaries these were known as "Personal Home Page Tools" or "PHP Tools".
+
+In 1995 Rasmus release the source for PHP Tools so it could be freely used and developed by others.
+
+
+\chapter{The rise of server side languages in the web}
 From 1993 with the release of the Common Gateway Interface (CGI) to the early 2000's many new programming languages most scripting languages were born such as PHP, Python, Ruby and also new versions of those Languages.
 
 Here is a list of release years\cite{royal-pingdom}: 
@@ -78,6 +152,12 @@ As you can see in the time line above the whole web exploded on to the scene in 
 
 \bibitem{royal-pingdom}
 \href{http://royal.pingdom.com/2007/12/07/a-history-of-the-dynamic-web/}{Royal Pingdom - A history of the Dynamic Web}
+
+\bibitem{wiki-Perl-CGI}
+\href{http://en.wikipedia.org/wiki/CGI.pm}{Wikipedia - Perl CGI.pm}
+
+\bibitem{wiki-Perl}
+\href{http://en.wikipedia.org/wiki/Perl}{Wikipedia - Perl}
 \end{thebibliography}
 
 \end{document}

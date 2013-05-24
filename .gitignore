@@ -1,6 +1,6 @@
 *.swp
-*.pdf
 *.log
 *.tex~
 *.aux
 *.out
+*.toc
