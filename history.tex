@@ -117,6 +117,35 @@ PHP was created in 1994 by Rasmus Lerdorf and was original a set of C CGI (Commo
 
 In 1995 Rasmus release the source for PHP Tools so it could be freely used and developed by others.
 
+Shortly after the source for PHP Tools was released and was then renamed FI (Forms Interpreter) in September 1995, this implementation has some of the functionality that is in PHP today. This implementation introduced a Perl like syntax, automatic parsing of form variables and the ability to embed HTML.
+
+In October 1995 it a complete rewrite was released by Rasmus and the PHP name was re-instated this time PHP stood for "Personal Home Page Construction Kit", which was considered an advanced scripting language. This release brought a C like syntax, which made it more accessible to developer that were familar with C or Perl. Also at this time a Windows NT implement become a possiblity.
+
+And as most new languages do it had another complete makeover in April 1996, this release was known as PHP/FI (Personal Home Page / Forms Interepter) this release was the first time PHP become a programming language in it's own right. This release include some new features in the way of built-in support for databases (DBM, mSQL, Postgres95), cookies, user defined function and more. In June that year PHP/FI which is otherwise known as PHP 2 these days.
+
+This version of PHP had a short life but it continued to grow in popularity in the newly evoulving world of web developement. A survey done by Netcraft in May 1998 reported the nearly 60,000 domains had header information that indicated the web server hosting the domain had PHP installed and running. PHP at the time had some minor contributors but as still mainly developed by Rasmus. 
+
+Here is an example of PHP/FI
+\lstset{language=HTML}
+\begin{lstlisting}[frame=single]
+<!--include /text/header.html-->
+
+<!--getenv HTTP_USER_AGENT-->
+<!--ifsubstr $exec_result Mozilla-->
+  Hey, you are using Netscape!<p>
+<!--endif-->
+
+<!--sql database select * from table where user='$username'-->
+<!--ifless $numentries 1-->
+  Sorry, that record does not exist<p>
+<!--endif exit-->
+  Welcome <!--$user-->!<p>
+  You have <!--$index:0--> credits left in your account.<p>
+
+<!--include /text/footer.html-->
+\end{lstlisting}
+
+
 
 \chapter{The rise of server side languages in the web}
 From 1993 with the release of the Common Gateway Interface (CGI) to the early 2000's many new programming languages most scripting languages were born such as PHP, Python, Ruby and also new versions of those Languages.
@@ -158,6 +187,9 @@ As you can see in the time line above the whole web exploded on to the scene in 
 
 \bibitem{wiki-Perl}
 \href{http://en.wikipedia.org/wiki/Perl}{Wikipedia - Perl}
+
+\bibitem{PHP - History}
+\href{http://nz1.php.net/manual/en/history.php.php}{PHP: History of PHP}
 \end{thebibliography}
 
 \end{document}
