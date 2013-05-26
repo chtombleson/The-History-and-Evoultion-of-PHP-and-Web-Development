@@ -89,6 +89,8 @@ Perl 5 become popular in the late 1990's as a CGI scripting language. Perl 5 was
 
 CGI.pm is a Perl module that provides an api for creating CGI (Common Gateway Interface) web applications.
 
+Even today Perl 5 is still used in web development whether via CGI.pm for with the use of Perl Web Frameworks such as \href{http://perldancer.org}{Dancer}.
+
 \subsection{Example Perl CGI Script}
 \begin{lstlisting}
 use CGI ':standard';
@@ -111,20 +113,28 @@ print 'You are ', param('age'), ' years old.' if param 'age';
 print end_html;
 
 \end{lstlisting}
+\newpage
 
 \section{Early PHP}
+How did PHP become what it is today? From the initial release of PHP Tools in 1994 to the release of PHP 4 in 1999.
+
+\subsection{PHP 1}
 PHP was created in 1994 by Rasmus Lerdorf and was original a set of C CGI (Common Gateway Interface) binaries these were known as "Personal Home Page Tools" or "PHP Tools".
 
 In 1995 Rasmus release the source for PHP Tools so it could be freely used and developed by others.
 
+The source code for PHP Tools (PHP 1) is here: \href{http://museum.php.net/php1/php-108.tar.gz}{http://museum.php.net/php1/php-108.tar.gz}.
+
+\subsection{PHP 2}
 Shortly after the source for PHP Tools was released and was then renamed FI (Forms Interpreter) in September 1995, this implementation has some of the functionality that is in PHP today. This implementation introduced a Perl like syntax, automatic parsing of form variables and the ability to embed HTML.
 
 In October 1995 it a complete rewrite was released by Rasmus and the PHP name was re-instated this time PHP stood for "Personal Home Page Construction Kit", which was considered an advanced scripting language. This release brought a C like syntax, which made it more accessible to developer that were familar with C or Perl. Also at this time a Windows NT implement become a possiblity.
 
 And as most new languages do it had another complete makeover in April 1996, this release was known as PHP/FI (Personal Home Page / Forms Interepter) this release was the first time PHP become a programming language in it's own right. This release include some new features in the way of built-in support for databases (DBM, mSQL, Postgres95), cookies, user defined function and more. In June that year PHP/FI which is otherwise known as PHP 2 these days.
 
-This version of PHP had a short life but it continued to grow in popularity in the newly evoulving world of web developement. A survey done by Netcraft in May 1998 reported the nearly 60,000 domains had header information that indicated the web server hosting the domain had PHP installed and running. PHP at the time had some minor contributors but as still mainly developed by Rasmus. 
+This version of PHP had a short life but it continued to grow in popularity in the newly evoulving world of web developement. A survey done by Netcraft in May 1998 reported the nearly 60,000 domains had header information that indicated the web server hosting the domain had PHP installed and running. PHP at the time had some minor contributors but is still mainly developed by Rasmus. 
 
+\newpage
 Here is an example of PHP/FI
 \lstset{language=HTML}
 \begin{lstlisting}[frame=single]
@@ -144,6 +154,21 @@ Here is an example of PHP/FI
 
 <!--include /text/footer.html-->
 \end{lstlisting}
+The source code for PHP/FI 2.0 (PHP 2) is here: \href{http://museum.php.net/php2/php-2.0.tar.gz}{http://museum.php.net/php3/php-3.0.tar.gz}.
+
+
+\subsection{PHP 3}
+The first version of PHP that provided similar functionality to what we are use to today was PHP 3.
+
+PHP 3 was collaborated development effort by Andi Gutmans, Zeev Suraski and Rasmus Lerdorf, they compelety rewrote the parser in 1997. The rewrite formed an indepent programming langauge, the rewrite also come with a new name PHP standing for Hypertext Preprocesser.
+
+PHP 3 introduced mature interfaces for multiple databses, protocols and API's. Another feature that was introduced was the ability to extend the language easily by writing modules. Also inorduced was object oriented programming suport and a more well defined language syxtax ans structure.
+
+June 1998, PHP/FI 2.0 (PHP 2) was deprecated in favour of PHP 3. At this time PHP 3 had many developers around the world collborating on the project. After months of public testing and the official release of PHP 3 it was prensent on 70,000+ domains all around the world. PHP 3 also brought support of non-POSIX compliant systems such as Windows 95, 98 and NT, and also Mac. At the height of PHP 3's popularity it was estimated that 10\% of web servers on the Internet were running PHP 3.
+
+The source code for PHP 3.0 is here: \href{http://museum.php.net/php3/php-3.0.tar.gz}{http://museum.php.net/php3/php-3.0.tar.gz}.
+
+\chapter{Modern PHP}
 
 
 
